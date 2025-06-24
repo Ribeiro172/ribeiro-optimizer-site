@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ribeiro Optimizer</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    header {
+      padding: 40px 20px 20px;
+    }
+
+    h1 {
+      font-size: 4rem;
+      color: #c084fc;
+      text-shadow: 0 0 15px #9f7aea;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #e0e0e0;
+    }
+
+    .cards {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      color: #fff;
+    }
+
+    .button {
+      margin-top: 20px;
+      padding: 12px 25px;
+      font-size: 1rem;
+      background-color: #8a2be2;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #a45df0;
+    }
+
+    .details {
+      display: none;
+      margin-top: 15px;
+      font-size: 0.95rem;
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .details strong {
+      color: #90ee90;
+    }
+
+    footer {
+      padding: 30px;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    /* Decoração lateral */
+    .decor {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      color: #6a5acd;
+      font-size: 18px;
+      opacity: 0.3;
+      animation: float 3s ease-in-out infinite alternate;
+    }
+
+    .left-decor { left: 10px; }
+    .right-decor { right: 10px; }
+
+    @keyframes float {
+      from { transform: translateY(0); }
+      to { transform: translateY(10px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="decor left-decor">
+    <div>❖</div><div>✦</div><div>❖</div><div>✦</div>
+  </div>
+  <div class="decor right-decor">
+    <div>✦</div><div>❖</div><div>✦</div><div>❖</div>
+  </div>
+
+  <header>
+    <h1>Ribeiro Optimizer</h1>
+    <p>Transforme o desempenho do seu PC com otimizações profissionais.</p>
+  </header>
+
+  <div class="cards">
+    <div class="card">
+      <h2>Otimização Básica</h2>
+      <button class="button" onclick="toggleDetails('basic')">Ver Detalhes</button>
+      <div class="details" id="basic">
+        <p><strong>Valor:</strong> R$10</p>
+        <p><strong>Descrição:</strong> Arquivos básicos que melhoram o desempenho do seu Windows.</p>
+        <p><strong>Pix:</strong> guilhermeeadonline@gmail.com</p>
+        <p>Envie o comprovante para o WhatsApp: <br><a href="https://wa.me/5517997515685" target="_blank">(17) 99751-5685</a></p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Otimização Média</h2>
+      <button class="button" onclick="toggleDetails('medium')">Ver Detalhes</button>
+      <div class="details" id="medium">
+        <p><strong>Valor:</strong> R$20</p>
+        <p><strong>Descrição:</strong> Aplicativos e complementos de arquivos .cmd e .reg.</p>
+        <p><strong>Pix:</strong> guilhermeeadonline@gmail.com</p>
+        <p>Envie o comprovante para o WhatsApp: <br><a href="https://wa.me/5517997515685" target="_blank">(17) 99751-5685</a></p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Otimização Extrema</h2>
+      <button class="button" onclick="toggleDetails('extreme')">Ver Detalhes</button>
+      <div class="details" id="extreme">
+        <p><strong>Valor:</strong> R$35</p>
+        <p><strong>Descrição:</strong> Arquivos, aplicativos otimizadores, arquivos .cmd, .bat, .reg e tudo mais.</p>
+        <p><strong>Pix:</strong> guilhermeeadonline@gmail.com</p>
+        <p>Envie o comprovante para o WhatsApp: <br><a href="https://wa.me/5517997515685" target="_blank">(17) 99751-5685</a></p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Ribeiro Optimizer
+  </footer>
+
+  <script>
+    function toggleDetails(id) {
+      document.querySelectorAll('.details').forEach(div => {
+        div.style.display = div.id === id ? (div.style.display === 'block' ? 'none' : 'block') : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
