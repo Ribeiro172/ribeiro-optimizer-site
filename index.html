@@ -13,6 +13,8 @@
       font-family: Arial, sans-serif;
       color: white;
       text-align: center;
+      position: relative;
+      overflow-x: hidden;
     }
 
     header {
@@ -20,8 +22,10 @@
     }
 
     h1 {
-      font-size: 3rem;
-      color: #b17bff;
+      font-size: 4rem;
+      color: #c084fc;
+      text-shadow: 0 0 15px #9f7aea;
+      margin-bottom: 10px;
     }
 
     p {
@@ -90,12 +94,42 @@
       font-size: 0.9rem;
       color: #ccc;
     }
+
+    /* Decoração lateral */
+    .decor {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      color: #6a5acd;
+      font-size: 18px;
+      opacity: 0.3;
+      animation: float 3s ease-in-out infinite alternate;
+    }
+
+    .left-decor { left: 10px; }
+    .right-decor { right: 10px; }
+
+    @keyframes float {
+      from { transform: translateY(0); }
+      to { transform: translateY(10px); }
+    }
   </style>
 </head>
 <body>
+  <div class="decor left-decor">
+    <div>❖</div><div>✦</div><div>❖</div><div>✦</div>
+  </div>
+  <div class="decor right-decor">
+    <div>✦</div><div>❖</div><div>✦</div><div>❖</div>
+  </div>
+
   <header>
     <h1>Ribeiro Optimizer</h1>
-    <p>Melhore o desempenho do seu PC fraco com nossas otimizações!</p>
+    <p>Transforme o desempenho do seu PC com otimizações profissionais.</p>
   </header>
 
   <div class="cards">
@@ -104,6 +138,7 @@
       <button class="button" onclick="toggleDetails('basic')">Ver Detalhes</button>
       <div class="details" id="basic">
         <p><strong>Valor:</strong> R$10</p>
+        <p><strong>Descrição:</strong> Arquivos básicos que melhoram o desempenho do seu Windows.</p>
         <p><strong>Pix:</strong> guilhermeeadonline@gmail.com</p>
         <p>Envie o comprovante para o WhatsApp: <br><a href="https://wa.me/5517997515685" target="_blank">(17) 99751-5685</a></p>
       </div>
@@ -114,6 +149,7 @@
       <button class="button" onclick="toggleDetails('medium')">Ver Detalhes</button>
       <div class="details" id="medium">
         <p><strong>Valor:</strong> R$20</p>
+        <p><strong>Descrição:</strong> Aplicativos e complementos de arquivos .cmd e .reg.</p>
         <p><strong>Pix:</strong> guilhermeeadonline@gmail.com</p>
         <p>Envie o comprovante para o WhatsApp: <br><a href="https://wa.me/5517997515685" target="_blank">(17) 99751-5685</a></p>
       </div>
@@ -124,6 +160,7 @@
       <button class="button" onclick="toggleDetails('extreme')">Ver Detalhes</button>
       <div class="details" id="extreme">
         <p><strong>Valor:</strong> R$35</p>
+        <p><strong>Descrição:</strong> Arquivos, aplicativos otimizadores, arquivos .cmd, .bat, .reg e tudo mais.</p>
         <p><strong>Pix:</strong> guilhermeeadonline@gmail.com</p>
         <p>Envie o comprovante para o WhatsApp: <br><a href="https://wa.me/5517997515685" target="_blank">(17) 99751-5685</a></p>
       </div>
@@ -137,11 +174,7 @@
   <script>
     function toggleDetails(id) {
       document.querySelectorAll('.details').forEach(div => {
-        if (div.id === id) {
-          div.style.display = div.style.display === 'block' ? 'none' : 'block';
-        } else {
-          div.style.display = 'none';
-        }
+        div.style.display = div.id === id ? (div.style.display === 'block' ? 'none' : 'block') : 'none';
       });
     }
   </script>
